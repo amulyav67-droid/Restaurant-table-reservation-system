@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TableEase | Restaurant Reservations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav><strong>TableEase</strong><span>Restaurant Table Reservation</span></nav>
+    <div class="hero-copy">
+      <p class="eyebrow">GOOD FOOD. GREAT MOMENTS.</p>
+      <h1>Reserve your table.</h1>
+      <p>Choose your date, time, and party size. We’ll take care of the table.</p>
+    </div>
+  </header>
+  <main class="layout">
+    <section class="panel">
+      <h2>Make a reservation</h2>
+      <p class="muted">Complete the details below to check availability.</p>
+      <form id="bookingForm">
+        <label>Full name<input name="customerName" required placeholder="e.g. Ananya Rao"></label>
+        <label>Phone number<input name="phone" required inputmode="numeric" maxlength="10" placeholder="10-digit mobile number"></label>
+        <div class="two">
+          <label>Date<input type="date" name="date" id="date" required></label>
+          <label>Time<select name="time" required>
+            <option value="">Choose time</option><option>12:00</option><option>13:00</option>
+            <option>18:00</option><option>19:00</option><option>20:00</option><option>21:00</option>
+          </select></label>
+        </div>
+        <label>Number of guests<select name="guests" required>
+          <option value="">Select guests</option><option value="1">1 guest</option><option value="2">2 guests</option>
+          <option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option>
+          <option value="6">6 guests</option><option value="7">7 guests</option><option value="8">8 guests</option>
+        </select></label>
+        <button type="submit">Check availability & reserve</button>
+      </form>
+      <div id="message" role="status"></div>
+    </section>
+    <aside class="info">
+      <div class="info-image" aria-label="Decorative restaurant illustration"><span>✦</span><span>GOOD FOOD<br>GOOD COMPANY</span></div>
+      <h2>Your evening, made easy.</h2>
+      <p>Reservations are held for 90 minutes. A booking confirmation includes your reservation ID and assigned table.</p>
+      <div class="rule"></div><p class="small">Demo policy: 4 tables for 1–2 guests, 3 tables for 3–4 guests, and 1 large table for 5–8 guests.</p>
+    </aside>
+  </main>
+  <section class="bookings">
+    <h2>Recent reservations (demo view)</h2>
+    <button class="secondary" id="refresh">Refresh list</button>
+    <div id="reservations"></div>
+  </section>
+  <footer>TableEase · Academic mini-project · Node.js + Express</footer>
+  <script src="app.js"></script>
+</body>
+</html>
